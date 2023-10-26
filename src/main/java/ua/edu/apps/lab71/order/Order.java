@@ -7,9 +7,9 @@ import ua.edu.apps.lab71.payment.Payment;
 import ua.edu.apps.lab71.store.Item;
 
 public class Order {
-    LinkedList<Item> items;
-    Payment payment;
-    Delivery delivery;
+    private LinkedList<Item> items;
+    private Payment payment;
+    private Delivery delivery;
 
     public Order(LinkedList<Item> items) {
         this.items = items;
@@ -30,21 +30,24 @@ public class Order {
     }
 
     public double calculatePrice() {
-        double total_price = 0;
+        double totalPrice = 0;
 
         for (Item item : this.items) {
-            total_price += item.getPrice();
+            totalPrice += item.getPrice();
         }
 
-        return total_price;
+        return totalPrice;
     }
-    public String proccessOrder(){
+
+    public String proccessOrder() {
         return this.payment.payment_redirect(this.calculatePrice());
     }
-    public void removeItem(Item item){
+
+    public void removeItem(Item item) {
         this.items.remove(item);
     }
-    public void addItem(Item item){
+
+    public void addItem(Item item) {
         this.items.add(item);
     }
 }
