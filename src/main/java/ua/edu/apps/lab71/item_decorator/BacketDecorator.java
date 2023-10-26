@@ -1,6 +1,5 @@
 package ua.edu.apps.lab71.item_decorator;
 
-import ua.edu.apps.lab71.item.FlowerBucket;
 import ua.edu.apps.lab71.store.Item;
 
 public class BacketDecorator extends ItemDecorator{
