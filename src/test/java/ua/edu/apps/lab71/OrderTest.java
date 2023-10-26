@@ -15,6 +15,7 @@ import ua.edu.apps.lab71.item.FlowerPack;
 import ua.edu.apps.lab71.item.Rose;
 import ua.edu.apps.lab71.item.Tulip;
 import ua.edu.apps.lab71.order.Order;
+import ua.edu.apps.lab71.payment.CreditCardPaymentStrategy;
 import ua.edu.apps.lab71.payment.PayPalPaymentStrategy;
 import ua.edu.apps.lab71.store.Item;
 
@@ -48,7 +49,7 @@ public class OrderTest {
 
         Assertions.assertTrue(order.proccessOrder().contains("paypal"));
 
-        order.setPaymentStrategy(new PayPalPaymentStrategy());
+        order.setPaymentStrategy(new CreditCardPaymentStrategy());
         Assertions.assertTrue(order.proccessOrder().contains("cpay"));
     }
 }
